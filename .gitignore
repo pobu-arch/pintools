@@ -1,1 +1,4 @@
 .DS_Store
+champsim.so
+pin
+obj-intel64/*
