@@ -1,4 +1,5 @@
 .DS_Store
 champsim.so
+champsim.dylib
 pin
 obj-intel64/*

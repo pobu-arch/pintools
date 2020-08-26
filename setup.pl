@@ -35,15 +35,18 @@ sub setup
     my $SRC_DIR      = $THIS_DIR."/$PINTOOL_NAME";
     my $PIN_DIR      = '';
     my $TARGET_DIR   = '';
+    my $POSTFIX      = '';
 
     my $os_type = Veronica::Common::get_os_type();
     if($os_type eq 'MacOSX')
     {
         $PIN_DIR = $MACOS_DIR;
+        $POSTFIX = 'dylib';
     }
     else
     {
         $PIN_DIR = $LINUX_DIR;
+        $POSTFIX = '.so';
     }
     $TARGET_DIR .= $PIN_DIR.'/source/tools/'."$PINTOOL_NAME";
     
@@ -57,7 +60,9 @@ sub setup
     chdir $THIS_DIR;
     
     Veronica::Common::say_level("error happened during compiling $PINTOOL_NAME", -1) if $fail;
+
+    my $postfix = 
     
-    Veronica::Common::override_symbol_link("$TARGET_DIR/obj-intel64/$PINTOOL_NAME.so", "$THIS_DIR/$PINTOOL_NAME.so");
+    Veronica::Common::override_symbol_link("$TARGET_DIR/obj-intel64/$PINTOOL_NAME\.$POSTFIX", "$THIS_DIR/$PINTOOL_NAME\.$POSTFIX");
     Veronica::Common::override_symbol_link("$PIN_DIR/pin", "$THIS_DIR/pin");
 }
