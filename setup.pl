@@ -46,7 +46,7 @@ sub setup
     else
     {
         $PIN_DIR = $LINUX_DIR;
-        $POSTFIX = '.so';
+        $POSTFIX = 'so';
     }
     $TARGET_DIR .= $PIN_DIR.'/source/tools/'."$PINTOOL_NAME";
     

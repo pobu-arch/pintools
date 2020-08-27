@@ -1,5 +1,6 @@
 .DS_Store
 champsim.so
 champsim.dylib
+pin.log
 pin
-obj-intel64/*
+*/source/tools/*
