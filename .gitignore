@@ -3,4 +3,4 @@ champsim.so
 champsim.dylib
 pin.log
 pin
-*/source/tools/*
+**/source/tools/

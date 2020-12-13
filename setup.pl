@@ -21,13 +21,13 @@ our $PINTOOL_NAME = 'champsim';
 
 sub init
 {
-    Veronica::Common::say_level("\n", 0);
-    Veronica::Common::say_level("================================", 0);
-    Veronica::Common::say_level("\n", 0);
-    Veronica::Common::say_level("Pin tools v0.1 by YSARCH", 0);
-    Veronica::Common::say_level("\n", 0);
-    Veronica::Common::say_level("================================", 0);
-    Veronica::Common::say_level("\n", 0);
+    Veronica::Common::log_level("\n", 0);
+    Veronica::Common::log_level("================================", 0);
+    Veronica::Common::log_level("\n", 0);
+    Veronica::Common::log_level("Pin tools v0.1 by YSARCH", 0);
+    Veronica::Common::log_level("\n", 0);
+    Veronica::Common::log_level("================================", 0);
+    Veronica::Common::log_level("\n", 0);
 }
 
 sub setup
@@ -53,13 +53,13 @@ sub setup
     system "rm -irf $TARGET_DIR" if -e $TARGET_DIR;
     system "cp -r $SRC_DIR $TARGET_DIR";
 
-    Veronica::Common::say_level("error happened during copying $PINTOOL_NAME", -1) if !-e $TARGET_DIR;
+    Veronica::Common::log_level("error happened during copying $PINTOOL_NAME", -1) if !-e $TARGET_DIR;
 
     chdir $TARGET_DIR;
     my $fail = system "make";
     chdir $THIS_DIR;
     
-    Veronica::Common::say_level("error happened during compiling $PINTOOL_NAME", -1) if $fail;
+    Veronica::Common::log_level("error happened during compiling $PINTOOL_NAME", -1) if $fail;
 
     my $postfix = 
     
