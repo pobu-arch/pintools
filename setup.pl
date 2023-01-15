@@ -6,6 +6,7 @@ use File::Find;
 use File::Copy;
 use lib "$ENV{'VERONICA'}/perl";
 use Veronica::Common;
+use Veronica::System;
 
 our $THIS_DIR  = Veronica::Common::get_script_path();
 our $LINUX_DIR = $THIS_DIR.'/linux_pin_3.15';
@@ -37,7 +38,7 @@ sub setup
     my $TARGET_DIR   = '';
     my $POSTFIX      = '';
 
-    my $os_type = Veronica::Common::get_os_type();
+    my $os_type = Veronica::System::get_os_type();
     if($os_type eq 'MacOSX')
     {
         $PIN_DIR = $MACOS_DIR;
